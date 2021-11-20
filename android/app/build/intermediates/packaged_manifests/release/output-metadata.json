@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.link_refurb",
+  "applicationId": "com.links.zw.co.link_refurb",
   "variantName": "release",
   "elements": [
     {

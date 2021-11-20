@@ -107,7 +107,7 @@ class _SingleJobDetailsState extends State<SingleJobDetails> {
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Text(
               position.name!,
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headline6,
             ),
           ),
           ListTile(

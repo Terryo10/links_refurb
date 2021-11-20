@@ -1,4 +1,4 @@
-package com.example.link_refurb
+package com.links.zw.co.link_refurb
 
 import io.flutter.embedding.android.FlutterActivity
 

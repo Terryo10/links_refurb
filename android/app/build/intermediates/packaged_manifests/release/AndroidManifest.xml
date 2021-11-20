@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.link_refurb"
+    package="com.links.zw.co.link_refurb"
     android:versionCode="1"
     android:versionName="1.0.0" >
 
@@ -22,9 +22,9 @@
     <application
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
-        android:label="link_refurb" >
+        android:label="Links" >
         <activity
-            android:name="com.example.link_refurb.MainActivity"
+            android:name="com.links.zw.co.link_refurb.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"

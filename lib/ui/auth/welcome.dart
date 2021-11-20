@@ -12,7 +12,7 @@ class WelcomePage extends StatelessWidget {
   Widget _submitButton(BuildContext context) {
     return InkWell(
       onTap: () {
-       BlocProvider.of<WelcomeBloc>(context).add(WelcomeLoginEvent());
+        BlocProvider.of<WelcomeBloc>(context).add(WelcomeLoginEvent());
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -39,7 +39,7 @@ class WelcomePage extends StatelessWidget {
   Widget _signUpButton(BuildContext context) {
     return InkWell(
       onTap: () {
-       BlocProvider.of<WelcomeBloc>(context).add(WelcomeRegisterEvent());
+        BlocProvider.of<WelcomeBloc>(context).add(WelcomeRegisterEvent());
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
@@ -64,7 +64,7 @@ class WelcomePage extends StatelessWidget {
           text: 'L',
           style: GoogleFonts.portLligatSans(
             // ignore: deprecated_member_use
-            textStyle: Theme.of(context).textTheme.headline1,
+            textStyle: Theme.of(context).textTheme.headline6,
             fontSize: 30,
             fontWeight: FontWeight.w700,
             color: Colors.white,
