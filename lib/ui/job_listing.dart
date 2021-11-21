@@ -13,6 +13,12 @@ class JobsPage extends StatefulWidget {
 }
 
 class _JobsPageState extends State<JobsPage> {
+  TextEditingController _searchQueryController = TextEditingController();
+  String searchQuery = "Search query";
+  void updateSearchQuery(String query) {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<JobsBloc, JobsState>(
@@ -22,7 +28,30 @@ class _JobsPageState extends State<JobsPage> {
           if (state is JobsLoadingState) {
             return Loader();
           } else if (state is JobsLoadedState) {
-            return jobsList(jobsModel: state.jobsModel);
+            return Column(
+              children: [
+                Container(
+                  height: 50.0,
+                  color: Colors.orange[100],
+                  child: Container(
+                      child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: _searchQueryController,
+                      autofocus: true,
+                      decoration: InputDecoration(
+                        hintText: "Filter Jobs...",
+                        // border: InputBorder.none,
+                        hintStyle: TextStyle(color: Colors.black),
+                      ),
+                      style: TextStyle(color: Colors.black, fontSize: 16.0),
+                      onChanged: (query) => updateSearchQuery(query),
+                    ),
+                  )),
+                ),
+                Expanded(child: jobsList(jobsModel: state.jobsModel))
+              ],
+            );
           } else if (state is JobsErrorState) {
             return buildError(context,
                 message: state.message.replaceAll('Exception', ''));
@@ -34,11 +63,22 @@ class _JobsPageState extends State<JobsPage> {
   }
 
   Widget jobsList({required JobsModel jobsModel}) {
-    var list = jobsModel.jobs;
+    List<Job>? list = jobsModel.jobs;
+    List<Job>? listToBeUsed = [];
+
+    if (!_searchQueryController.text.isEmpty) {
+      listToBeUsed = jobsModel.jobs!
+          .where((element) => element.name!
+              .toLowerCase()
+              .contains(_searchQueryController.text.toLowerCase()))
+          .toList();
+    } else {
+      listToBeUsed = jobsModel.jobs;
+    }
     return ListView.builder(
-        itemCount: list!.length,
+        itemCount: listToBeUsed!.length,
         itemBuilder: (BuildContext context, int index) {
-          return jobCard(job: list[index]);
+          return jobCard(job: listToBeUsed![index]);
         });
   }
 
@@ -51,7 +91,6 @@ class _JobsPageState extends State<JobsPage> {
         );
       },
       child: Container(
-        
         decoration: new BoxDecoration(
           boxShadow: [
             new BoxShadow(
