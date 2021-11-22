@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:link_refurb/bloc/cache_bloc/cache_bloc.dart';
+import 'package:link_refurb/bloc/jobs_bloc/jobs_bloc.dart';
 import 'package:link_refurb/bloc/user_bloc/user_bloc.dart';
 import 'package:link_refurb/data/strings.dart';
 import 'package:link_refurb/ui/experties_page.dart';
@@ -33,6 +34,19 @@ class _HomeSubState extends State<HomeSub> {
               backgroundColor: Color(0xfff7892b),
               title: Text('Links App'),
               actions: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 8),
+                    child: GestureDetector(
+                      onTap: () {
+                        BlocProvider.of<JobsBloc>(context).add(FetchUserJobs());
+                      },
+                      child: Container(
+                          height: 50, width: 50, child: Icon(Icons.refresh)),
+                    ),
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(right: 8.0),
                   child: Container(

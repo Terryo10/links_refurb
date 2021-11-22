@@ -37,10 +37,11 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+drawable kkk
 drawable launch_background
+drawable links_splas3h
 drawable links_splash
 drawable links_splash_adobespark
-drawable lololol
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
