@@ -1,5 +1,5 @@
 class AppStrings {
-  static String baseUrl = 'http://192.168.43.160:5000';
+  static String baseUrl = 'https://app.links.co.zw';
 
   static String loginUrl = '/api/login';
 

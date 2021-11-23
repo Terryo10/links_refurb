@@ -106,7 +106,7 @@ class _HomeSubState extends State<HomeSub> {
                             child: ClipOval(
                               child: CachedNetworkImage(
                                 imageUrl:
-                                    "${AppStrings.baseUrl}/storage/product_images/${state.userModel.data!.profile!.imagePath}",
+                                    "${AppStrings.baseUrl}/storage/app/public/product_images/${state.userModel.data!.profile!.imagePath}",
                                 fit: BoxFit.cover,
                                 width: 80,
                                 height: 80,
