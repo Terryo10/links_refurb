@@ -10,7 +10,7 @@ import 'package:link_refurb/bloc/experties_bloc/experties_bloc.dart';
 import 'package:link_refurb/bloc/subscription_bloc/subscription_bloc.dart';
 import 'package:link_refurb/bloc/user_bloc/user_bloc.dart';
 import 'package:link_refurb/bloc/welcome_bloc/welcome_bloc.dart';
-import 'package:link_refurb/models/user_model/user_model.dart';
+
 import 'package:link_refurb/repositories/authentication_repository/authentication_repository.dart';
 import 'package:link_refurb/repositories/cache_repository/cache_repository.dart';
 import 'package:link_refurb/repositories/expertise_repository/experties_repository.dart';
