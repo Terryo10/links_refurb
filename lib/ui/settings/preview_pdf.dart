@@ -37,7 +37,8 @@ class _PdfPreviewPageState extends State<PdfPreviewPage> {
       "content-type": "application/json"
     };
     var url =
-        '${AppStrings.baseUrl}/storage/app/public/cv_file/${widget.userModel.data!.cvFile!.filePath}';
+        '${AppStrings.baseUrl}/storage/cv_file/${widget.userModel.data!.cvFile!.filePath}';
+    print(url);
     document = await PDFDocument.fromURL(url, headers: headers);
 
     setState(() => _isLoading = false);
